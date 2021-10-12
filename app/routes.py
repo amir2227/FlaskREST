@@ -1,5 +1,4 @@
-from flask import Flask, Response, jsonify, request
-from flask_pymongo import ASCENDING
+from flask import jsonify, request
 from app import app
 from app import mongo
 
@@ -27,6 +26,20 @@ def get_one_user(username):
     status=404
   return jsonify({'result' : output}), status
 
+
+@app.route('/update_user', methods=['PUT'])
+def update_user():
+    user = mongo.db.users
+    username = request.json['username']
+    new_name = request.json['name']
+    usr = user.update_one({'username': username}, {'$set': { 'name': new_name }})
+    if usr.matched_count:
+        output = {"message": "user successfully updated!"}
+        status=200
+    else:
+        output = {"message": "No such username"}
+        status=404
+    return jsonify({'result': output}), status
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
