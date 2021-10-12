@@ -40,3 +40,33 @@ now you can run the flask server
 ```bash
 python3 run.py
 ```
+## API End Points
+**Show User**
+----
+  Returns json data about a single user.
+
+* **URL**
+
+  /get_one_user/<username>
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `username=[string]`
+
+----
+  Returns json data about all user.
+
+* **URL**
+
+  /get_all_user
+
+* **Method:**
+
+  `GET`
+  
