@@ -70,3 +70,46 @@ python3 run.py
 
   `GET`
   
+----
+  Update a user name
+
+* **URL**
+
+  /update_user
+
+* **Method:**
+
+  `PUT`
+    
+*  **Body JSON data**
+
+   **Required:**
+ 
+   ```json
+     {"username": "", "name": "new_name"}
+   ```
+
+  
+----
+  Create a user
+
+* **URL**
+
+  /add_user
+
+* **Method:**
+
+  `POST`
+    
+*  **Body JSON data**
+
+   **Required:**
+ 
+   ```json
+     {
+      "username": "", 
+      "name": "",
+      "calls": ""
+      }
+   ```
+
